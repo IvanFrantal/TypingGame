@@ -1,0 +1,16 @@
+// problemi koji su nastali 
+	// bilo bi idealno kada bi mogao ovaj Array skup slova imati kao 
+	// globalnu varijablu kako bi sve funkcije joj mogle pristupiti
+	// a ne znas kako to sloziti
+	
+	// treba ti ta lista kao globalna varijabla
+	// trebas f-ju za popunjavanje
+	// 		if (L[i] = " ") then L[i] = randSlovo
+	// f-ja za print je tu cisto radi provjere sta imas u Listi
+	
+	
+	// kada budes imao tu globalnu listu onda ces moci i lagano provjeriti
+	// koje slovo je na ekranu tj. ako je slovo u listi onda je i na ekranu
+	// a ako je na ekranu onda ide one if keyPressed = to slovo unutar liste
+	// then obrisi ga s ekrana postavi cursor na vrh i u listu daj novo slovo
+	// koje ce krenuti padati

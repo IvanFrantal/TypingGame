@@ -1,0 +1,105 @@
+class PadSlova {
+	
+	// WORK IN PROGGRES (komentari kada zavrsis)
+	
+	
+	// f-ja za provjeru da vidim radi li kako treba
+	function void printList(Array SkupSlova)
+	{
+		var int br;
+		var string s;
+		let br = 0;
+	
+		while (br < 16)
+		{
+			let s = SkupSlova[br];
+			do Output.printString(s);
+			
+			let br = br + 1;
+		}
+		
+		return;
+	}
+	
+	//f-ja puni polje sa slovima gdje je potrebno
+	function void popuniSslovima(int pozicija, string slovo, Array SkupSlova)
+	{
+		let SkupSlova[pozicija] = slovo;
+	
+		return;
+	}
+	
+	
+	function void fallingLetters(Array SkupSlova)
+	{		
+		var int x, y;
+		var string s;
+		let x = 3;
+		let y = 2;
+		let s = SkupSlova[0];
+		
+		// nespustaju ti se slova prema dolje
+		
+		while (x < 8)
+		{
+			while (y < 7)
+			{
+				do Output.moveCursor(x,y);
+				do Output.printString(s);
+				do Sys.wait(500);
+				do Output.moveCursor(x,y);
+				do Output.printString(" ");
+				
+				let y = y + 1;
+			}
+			
+			let x = x + 1;
+		}
+		
+		return;
+	}
+	
+	function string drawLetters()
+	{
+		var Array slova;
+		var int br, randBroj;
+		var string slovo;
+		let br = 0;
+		let slova = Array.new(26);
+		
+		let slova[0] = "A";
+		let slova[1] = "B";
+		let slova[2] = "C";
+		let slova[3] = "D";
+		let slova[4] = "E";
+		let slova[5] = "F";
+		let slova[6] = "G";
+		let slova[7] = "H";
+		let slova[8] = "I";
+		let slova[9] = "J";
+		let slova[10] = "K";
+		let slova[11] = "L";
+		let slova[12] = "M";
+		let slova[13] = "N";
+		let slova[14] = "O";
+		let slova[15] = "P";
+		let slova[16] = "Q";
+		let slova[17] = "R";
+		let slova[18] = "S";
+		let slova[19] = "T";
+		let slova[20] = "U";
+		let slova[21] = "V";
+		let slova[22] = "W";
+		let slova[23] = "X";
+		let slova[24] = "Y";
+		let slova[25] = "Z";
+		
+		let randBroj = Random.randRange(25);
+		let slovo = slova[randBroj];
+		
+		do slova.dispose();
+		return slovo;
+	}
+
+
+}

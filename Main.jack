@@ -1,0 +1,125 @@
+class Main
+{
+	// pozivanje i ukomponiranje svega i svacega da
+	// dobijem igru koja radi :)
+	function void main()
+	{
+		var Array pogoden, skupSlova, randBrlist;
+		var int difficulty, score, br, randBroj, seed, gameTime;
+		var string slovo;
+		
+		let randBrlist = Array.new(16);
+		let skupSlova = Array.new(16);
+		
+		let seed = 5;
+		let gameTime = 10000;
+		
+		let score = 0;
+		
+		let br = 0;
+		let pogoden = Array.new(16);
+		while (br < 16)
+		{
+			let pogoden[br] = 0;
+			let br = br + 1;
+		}
+		
+		//do Pod.isHit(pogoden, 1, 14);
+		//do Pod.isHit(pogoden, 1, 14);
+		
+		//let score = GUI.updateScore(score);
+		
+		do Output.moveCursor(2,21);
+		do Output.printString("TYPING GAME DELUXE");
+		do Output.moveCursor(6,5);
+		do Output.printString("Difficulty ranges from 1 (Hardest) to 3 (Easiest)");
+		do Output.println();
+		do Output.moveCursor(8,5);
+		let difficulty = Keyboard.readInt("Enter difficulty: ");
+		do Screen.clearScreen();
+		
+		if (difficulty = 0) {
+			do Screen.clearScreen();
+			do GUI.easterEgg();
+			do Sys.wait(4000);
+			do Sys.halt();
+		}
+		
+		if ((difficulty > 0) & (difficulty < 4))
+		{
+			do GUI.UI(difficulty, score);
+			do Pod.crtajPod(difficulty, pogoden);
+		}
+		else
+		{
+			do Output.moveCursor(8,5);
+			do Output.printString("Difficulty can be set from 1 (Hardest) to 3 (Easiest)");
+			do Output.moveCursor(10,19);
+			do Output.printString("Please restart the game");
+		}
+		
+		// popuni mi listu sa random slovima
+		let br = 0;
+		while (br < 16)
+		{
+			do Random.setSeed(seed);
+			let slovo = PadSlova.drawLetters();
+			
+			let randBrlist[br] = slovo;
+			
+			let br = br + 1;
+			
+			if (seed > 32700)
+			{
+				let seed = 5;
+			}
+			
+			let seed = seed + 17;
+		}
+		
+		//popuni main listu sa slovima
+		let br = 0;
+		while (br < 16)
+		{
+			do PadSlova.popuniSslovima(br, randBrlist[br], skupSlova);
+		
+			let br = br + 1;
+		}
+		
+		
+		// ---------------------------
+		// Ova petlja je najednom odlucila biti bezobrazna i baca ti neki stack overflow :(((((
+		
+		
+		let br = 0;
+		while (br < gameTime)
+		{	
+			
+			// -------------------------------------
+			
+			//do PadSlova.printList(skupSlova);
+			//
+			//do Output.moveCursor(0,0);
+			//do Output.printString("---GOTOVO---");
+			//do Sys.wait(5000);
+			// --------------------------------------
+			
+			do PadSlova.fallingLetters(skupSlova);
+			do Sys.wait(100);
+			
+			let br = br + 1; 
+		}
+		
+		
+		// ---------------------------------
+		
+		
+		
+		
+		do pogoden.dispose();
+		do skupSlova.dispose();
+		do randBrlist.dispose();
+		
+		return;
+	}
+}

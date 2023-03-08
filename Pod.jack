@@ -1,0 +1,113 @@
+class Pod {
+	
+	// f-ja koja crta pod na nacin da crta onoliko kvadratica
+	// koliko je prosljeden difficulty, takoder crta odozdo
+	// prema gore i svaki stupac je za sebe
+	// zbog toga mogu postici da u array pogoden prosljedim
+	// vrijednost i tako kazem da mi crta odredeni broj
+	// kvadratica po stupcu
+	function void crtajPod(int difficulty, Array pogoden)
+	{
+		var int x1, y1, x2, y2, br, max, brStupaca;
+		var Array A;
+		let max = 16;
+		let brStupaca = 0;
+		let br = 0;
+		let x1 = 0;
+		let y1 = 225;
+		let x2 = 30;
+		let y2 = 255;
+		
+		let A = Array.new(16);
+		while (br < max)
+		{
+			let A[br] = difficulty;
+			let br = br + 1;
+		}
+		
+		let br = 0;
+		
+		
+		while (brStupaca < max)
+		{
+			if (pogoden[brStupaca] = 0)
+			{
+				while (br < A[brStupaca])
+				{
+					do Screen.drawRectangle(x1, y1, x2, y2);
+					let y1 = y1 - 32;
+					let y2 = y2 - 32;
+					
+					let br = br + 1;
+				}
+			}
+			if ((pogoden[brStupaca] > 0) & (pogoden[brStupaca] < difficulty))
+			{
+				let A[brStupaca] = A[brStupaca] - pogoden[brStupaca];
+				
+				while (br < A[brStupaca])
+				{
+					do Screen.drawRectangle(x1, y1, x2, y2);
+					let y1 = y1 - 32;
+					let y2 = y2 - 32;
+					
+					let br = br + 1;
+				}
+			}
+			if ((pogoden[brStupaca] > 0) & (pogoden[brStupaca] = (difficulty + 1)))
+			{	
+				while (br < A[brStupaca])
+				{
+					do Screen.drawRectangle(0,0,0,0);
+					let br = br + 1;
+				}
+			}
+			if (pogoden[brStupaca] = (difficulty + 1))
+			{
+				do Screen.clearScreen();
+				do Output.moveCursor(10,25);
+				do Output.printString("GAME OVER");
+				do Sys.wait(300);
+				do Screen.clearScreen();
+				do Sys.wait(300);
+				do Output.moveCursor(10,25);
+				do Output.printString("GAME OVER");
+				do Sys.wait(300);
+				do Screen.clearScreen();
+				do Sys.wait(300);
+				do Output.moveCursor(10,25);
+				do Output.printString("GAME OVER");
+				do Sys.wait(300);
+				do Screen.clearScreen();
+				do Sys.wait(300);
+				do Output.moveCursor(10,25);
+				do Output.printString("GAME OVER");
+				
+				let brStupaca = max;
+				
+				do Sys.halt();
+			}
+			
+			let x1 = x1 + 32;
+			let x2 = x2 + 32;
+			let y1 = 225;
+			let y2 = 255;
+			let br = 0;
+			
+			let brStupaca = brStupaca + 1;
+			
+		}
+		
+		do A.dispose();
+		return;
+	}
+	
+	
+	// f-ja koja povecava score kada se pozove
+	function Array isHit(Array pogoden, int hit, int gdje)
+	{
+		let pogoden[gdje] = pogoden[gdje] + hit;
+		return pogoden;
+	}
+
+}

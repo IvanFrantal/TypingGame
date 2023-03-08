@@ -32,26 +32,31 @@ class PadSlova {
 	
 	function void fallingLetters(Array SkupSlova)
 	{		
-		var int x, y;
+		var int x, y, i;
 		var string s;
-		let x = 0;
-		let y = 0;
-		let s = SkupSlova[0];	
+		let x = 3;
+		let y = 1;
+		let i = 0;
 		
-		while (x < 5)
+		while (x < 25)
 		{
-			while (y < 5)
+			while (y < 64)
 			{
+				let s = SkupSlova[i];	
 				do Output.moveCursor(x,y);
 				do Output.printString(s);
-				do Sys.wait(500);
+				do Sys.wait(50);
 				do Output.moveCursor(x,y);
 				do Output.printString(" ");
 				
-				let y = y + 1;
+				let i = i + 1;
+				let y = y + 4;
 			}
 			
-			let y = 0;
+			do Sys.wait(100);
+			
+			let i = 0;
+			let y = 1;
 			let x = x + 1;
 		}
 		

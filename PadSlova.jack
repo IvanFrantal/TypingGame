@@ -45,7 +45,7 @@ class PadSlova {
 				let s = SkupSlova[i];	
 				do Output.moveCursor(x,y);
 				do Output.printString(s);
-				do Sys.wait(50);
+				do Sys.wait(200);
 				do Output.moveCursor(x,y);
 				do Output.printString(" ");
 				
@@ -53,7 +53,7 @@ class PadSlova {
 				let y = y + 4;
 			}
 			
-			do Sys.wait(100);
+			do Sys.wait(1000);
 			
 			let i = 0;
 			let y = 1;

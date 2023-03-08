@@ -67,7 +67,7 @@ pop temp 0
 push local 3
 call Output.printString 1
 pop temp 0
-push constant 50
+push constant 200
 call Sys.wait 1
 pop temp 0
 push local 0
@@ -90,7 +90,7 @@ add
 pop local 1
 goto WHILE_EXP1
 label WHILE_END1
-push constant 100
+push constant 1000
 call Sys.wait 1
 pop temp 0
 push constant 0

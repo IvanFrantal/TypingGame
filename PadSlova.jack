@@ -34,15 +34,13 @@ class PadSlova {
 	{		
 		var int x, y;
 		var string s;
-		let x = 3;
-		let y = 2;
-		let s = SkupSlova[0];
+		let x = 0;
+		let y = 0;
+		let s = SkupSlova[0];	
 		
-		// nespustaju ti se slova prema dolje
-		
-		while (x < 8)
+		while (x < 5)
 		{
-			while (y < 7)
+			while (y < 5)
 			{
 				do Output.moveCursor(x,y);
 				do Output.printString(s);
@@ -53,6 +51,7 @@ class PadSlova {
 				let y = y + 1;
 			}
 			
+			let y = 0;
 			let x = x + 1;
 		}
 		

@@ -4,10 +4,11 @@ class Main
 	// dobijem igru koja radi :)
 	function void main()
 	{
-		var Array pogoden, skupSlova, randBrlist;
+		var Array pogoden, skupSlova, randBrlist, SlovaRazmaci;
 		var int difficulty, score, br, randBroj, seed, gameTime;
 		var string slovo;
 		
+		let SlovaRazmaci = Array.new(16);
 		let randBrlist = Array.new(16);
 		let skupSlova = Array.new(16);
 		
@@ -104,8 +105,12 @@ class Main
 			//do Sys.wait(5000);
 			// --------------------------------------
 			
-			do PadSlova.fallingLetters(skupSlova);
-			do Sys.wait(100);
+			do PadSlova.dodajRazmake(SlovaRazmaci, skupSlova);
+			//do Sys.wait(5000);
+			
+			
+			do PadSlova.fallingLetters(SlovaRazmaci);
+			do Sys.wait(500);
 			
 			let br = br + 1; 
 		}
@@ -119,6 +124,7 @@ class Main
 		do pogoden.dispose();
 		do skupSlova.dispose();
 		do randBrlist.dispose();
+		do SlovaRazmaci.dispose();
 		
 		return;
 	}

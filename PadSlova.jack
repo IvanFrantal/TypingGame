@@ -29,36 +29,52 @@ class PadSlova {
 		return;
 	}
 	
+	function void dodajRazmake(Array SlovaRazmaci, Array SkupSlova)
+	{
+		var int br;
+		var string SlovoSrazmakom;
+		
+		let br = 0;
+		let SlovoSrazmakom = " ";
+		
+		while (br < 16)
+		{
+			let SlovoSrazmakom = Strings.concat(SlovoSrazmakom, SkupSlova[br]);
+			let SlovoSrazmakom = Strings.concat(SlovoSrazmakom, " ");
+			let SlovoSrazmakom = Strings.concat(SlovoSrazmakom, " ");
+			
+			let SlovaRazmaci[br] = SlovoSrazmakom;
+		
+			let SlovoSrazmakom = " ";
+			let br = br + 1;
+		}
 	
-	function void fallingLetters(Array SkupSlova)
+		return;
+	}
+	
+	
+	function void fallingLetters(Array SlovaRazmaci)
 	{		
-		var int x, y, i;
-		var string s;
+		var string praznina;
+		var int x;
+		
+		let praznina = "                                                                ";
 		let x = 3;
-		let y = 1;
-		let i = 0;
 		
 		while (x < 25)
 		{
-			while (y < 64)
-			{
-				let s = SkupSlova[i];	
-				do Output.moveCursor(x,y);
-				do Output.printString(s);
-				do Sys.wait(200);
-				do Output.moveCursor(x,y);
-				do Output.printString(" ");
-				
-				let i = i + 1;
-				let y = y + 4;
-			}
+			do Output.moveCursor(x, 0);
+			do PadSlova.printList(SlovaRazmaci);
+			do Sys.wait(500);
+			do Output.moveCursor(x, 0);
+			do Output.printString(praznina);
+			
 			
 			do Sys.wait(1000);
 			
-			let i = 0;
-			let y = 1;
 			let x = x + 1;
 		}
+	
 		
 		return;
 	}

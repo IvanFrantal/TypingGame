@@ -35,72 +35,227 @@ push temp 0
 pop that 0
 push constant 0
 return
-function PadSlova.fallingLetters 4
-push constant 3
-pop local 0
-push constant 1
-pop local 1
+function PadSlova.dodajRazmake 2
 push constant 0
-pop local 2
-label WHILE_EXP0
-push local 0
-push constant 25
-lt
-not
-if-goto WHILE_END0
-label WHILE_EXP1
-push local 1
-push constant 64
-lt
-not
-if-goto WHILE_END1
-push local 2
-push argument 0
-add
-pop pointer 1
-push that 0
-pop local 3
-push local 0
-push local 1
-call Output.moveCursor 2
-pop temp 0
-push local 3
-call Output.printString 1
-pop temp 0
-push constant 200
-call Sys.wait 1
-pop temp 0
-push local 0
-push local 1
-call Output.moveCursor 2
-pop temp 0
+pop local 0
 push constant 1
 call String.new 1
 push constant 32
 call String.appendChar 2
-call Output.printString 1
-pop temp 0
-push local 2
-push constant 1
-add
-pop local 2
-push local 1
-push constant 4
-add
 pop local 1
-goto WHILE_EXP1
-label WHILE_END1
-push constant 1000
-call Sys.wait 1
-pop temp 0
-push constant 0
-pop local 2
+label WHILE_EXP0
+push local 0
+push constant 16
+lt
+not
+if-goto WHILE_END0
+push local 1
+push local 0
+push argument 1
+add
+pop pointer 1
+push that 0
+call Strings.concat 2
+pop local 1
+push local 1
 push constant 1
+call String.new 1
+push constant 32
+call String.appendChar 2
+call Strings.concat 2
+pop local 1
+push local 1
+push constant 1
+call String.new 1
+push constant 32
+call String.appendChar 2
+call Strings.concat 2
+pop local 1
+push local 0
+push argument 0
+add
+push local 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+call String.new 1
+push constant 32
+call String.appendChar 2
 pop local 1
 push local 0
 push constant 1
 add
 pop local 0
+goto WHILE_EXP0
+label WHILE_END0
+push constant 0
+return
+function PadSlova.fallingLetters 2
+push constant 64
+call String.new 1
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+pop local 0
+push constant 3
+pop local 1
+label WHILE_EXP0
+push local 1
+push constant 25
+lt
+not
+if-goto WHILE_END0
+push local 1
+push constant 0
+call Output.moveCursor 2
+pop temp 0
+push argument 0
+call PadSlova.printList 1
+pop temp 0
+push constant 500
+call Sys.wait 1
+pop temp 0
+push local 1
+push constant 0
+call Output.moveCursor 2
+pop temp 0
+push local 0
+call Output.printString 1
+pop temp 0
+push constant 1000
+call Sys.wait 1
+pop temp 0
+push local 1
+push constant 1
+add
+pop local 1
 goto WHILE_EXP0
 label WHILE_END0
 push constant 0

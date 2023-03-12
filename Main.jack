@@ -89,36 +89,21 @@ class Main
 			let br = br + 1;
 		}
 		
-		
-		// ---------------------------
-		// Ova petlja je najednom odlucila biti bezobrazna i baca ti neki stack overflow :(((((
+		do PadSlova.dodajRazmake(SlovaRazmaci, skupSlova);
 		
 		
 		let br = 0;
 		while (br < gameTime)
 		{	
-			
-			// -------------------------------------
-			
-			//do PadSlova.printList(skupSlova);
-			//
-			//do Output.moveCursor(0,0);
-			//do Output.printString("---GOTOVO---");
-			//do Sys.wait(5000);
-			// --------------------------------------
-			
-			do PadSlova.dodajRazmake(SlovaRazmaci, skupSlova);
-			//do Sys.wait(5000);
-			
-			
-			do PadSlova.fallingLetters(SlovaRazmaci);
+			let br = br + 3;
+		
+			do PadSlova.fallingLetters(SlovaRazmaci, br);
 			do Sys.wait(500);
+			//do PadSlova.zamjeniSprazninom(SlovaRazmaci, 2);
 			
+			let br = br - 3;
 			let br = br + 1; 
 		}
-		
-		
-		// ---------------------------------
 		
 		
 		

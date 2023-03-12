@@ -52,29 +52,29 @@ class PadSlova {
 		return;
 	}
 	
+	function void zamjeniSprazninom(Array SlovaRazmaci, int pozicija)
+	{
+		var string prazno;
+		let prazno = "    ";
+		
+		let SlovaRazmaci[pozicija] = prazno;
+		
+		return;
+	}
 	
-	function void fallingLetters(Array SlovaRazmaci)
+	
+	function void fallingLetters(Array SlovaRazmaci, int x)
 	{		
-		var string praznina;
-		var int x;
-		
+		var string praznina;		
 		let praznina = "                                                                ";
-		let x = 3;
+
+		do Output.moveCursor(x, 0);
+		do PadSlova.printList(SlovaRazmaci);
+		do Sys.wait(500);
+		do Output.moveCursor(x, 0);
+		do Output.printString(praznina);
 		
-		while (x < 25)
-		{
-			do Output.moveCursor(x, 0);
-			do PadSlova.printList(SlovaRazmaci);
-			do Sys.wait(500);
-			do Output.moveCursor(x, 0);
-			do Output.printString(praznina);
-			
-			
-			do Sys.wait(1000);
-			
-			let x = x + 1;
-		}
-	
+		do Sys.wait(1000);
 		
 		return;
 	}

@@ -57,6 +57,8 @@ class Main
 			do Output.printString("Difficulty can be set from 1 (Hardest) to 3 (Easiest)");
 			do Output.moveCursor(10,19);
 			do Output.printString("Please restart the game");
+			do Sys.wait(4000);
+			do Sys.halt();
 		}
 		
 		// popuni mi listu sa random slovima

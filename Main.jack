@@ -99,6 +99,9 @@ class Main
 		
 			do PadSlova.fallingLetters(SlovaRazmaci, br);
 			do Sys.wait(500);
+
+			
+			
 			//do PadSlova.zamjeniSprazninom(SlovaRazmaci, 2);
 			
 			let br = br - 3;

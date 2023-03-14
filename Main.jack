@@ -97,8 +97,22 @@ class Main
 		{	
 			let br = br + 3;
 		
-			do PadSlova.fallingLetters(SlovaRazmaci, br);
-			do Sys.wait(500);			
+	
+			//------------------
+			
+			do PadSlova.pressKey();
+			do Sys.wait(500);
+			do Output.printString("e izaslo je van");
+			
+			
+			
+			
+			//------------------
+			
+		
+		
+			//do PadSlova.fallingLetters(SlovaRazmaci, br);
+			//do Sys.wait(500);			
 			
 			//do PadSlova.zamjeniSprazninom(SlovaRazmaci, 2);
 			

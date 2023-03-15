@@ -60,59 +60,7 @@ class PadSlova {
 		let SlovaRazmaci[pozicija] = prazno;
 		
 		return;
-	}
-	
-	function void pressKey()
-	{
-		var bool b;
-		var char c;
-		var string a;
-		let b = true;
-		let a = "A";
-		
-		// napokon mozes prepoznati koje slovo je stisnuto
-		// problem je sto nemozes usporedivati "A" sa 'A' -pitaj nekog ima li nacin
-		// ako ne nades rijesenje toga moras jako puno koda mijenjati
-		
-		while(b)
-		{
-			if (Keyboard.keyPressed() = 65)
-			{
-				let c = 65;
-				do Output.moveCursor(5,5);
-				do Output.printChar(c);
-				
-				do Output.printChar(a[0]);
-				
-				if (a[0] = c)
-				{
-					do Output.printString("A = 065");
-				}
-				
-				let b = false;
-			}
-
-		}
-		
-		return;
-	}
-	
-	function bool checkSlovo(char c, Array SkupSlova)
-	{
-		var int br;
-		let br = 0;
-		
-		while(br < 16)
-		{
-			if(SkupSlova[br] = c)
-			{
-				return true;
-			}
-		}
-		
-		return false;
-	}
-	
+	}	
 	
 	function void fallingLetters(Array SlovaRazmaci, int x)
 	{		
@@ -171,6 +119,69 @@ class PadSlova {
 		do slova.dispose();
 		return slovo;
 	}
+	
+	function Array checkSlovo(string s, Array SkupSlova)
+	{
+		var Array nePar;
+		var int br;
+		var string smece;
+		let smece = "#";
+		let br = 0;
+		let nePar = Array.new(3);
+		
+		while(br < 16)
+		{
+			if(Strings.equals(SkupSlova[br], s))
+			{
+				let nePar[0] = s;
+				let nePar[1] = br;
+				let nePar[2] = true;
+				
+				return nePar;
+			}
+			
+			let br = br + 1;
+		}
+		
+		let nePar[0] = smece; // nije valjano slovo iz abecede
+		let nePar[1] = 17;	// preveliki indeks
+		let nePar[2] = false;
+		return nePar;
+	}
+	
+	
+	function void pressKey(Array SkupSlova, Array SlovaRazmaci)
+	{
+		var bool ostani;
+		var string s;  //to slovo u ASCII
+		var string ss; //slovo iz skupa slova
+		var Array nePar;
+		let nePar = Array.new(3);
+		let ostani = true;
+		
+		
+		while(ostani)
+		{
+			if (Keyboard.keyPressed() = 65)
+			{
+				let s = "A";
+				let nePar = checkSlovo(s, SkupSlova);
+				
+				if (nePar[2]) // true
+				{
+					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+					SkupSlova[nePar[1]] = "#";
+				}
+				
+				let ostani = false;
+			}
+	
+			//let ostani = true;
 
+		}
+		
+		do nePar.dispose();
+		return;
+	}
 
 }

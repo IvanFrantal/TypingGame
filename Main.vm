@@ -526,7 +526,9 @@ push local 6
 push constant 3
 add
 pop local 6
-call PadSlova.pressKey 0
+push local 1
+push local 3
+call PadSlova.pressKey 2
 pop temp 0
 push constant 500
 call Sys.wait 1
@@ -564,6 +566,10 @@ call String.appendChar 2
 push constant 110
 call String.appendChar 2
 call Output.printString 1
+pop temp 0
+push local 3
+push local 6
+call PadSlova.fallingLetters 2
 pop temp 0
 push local 6
 push constant 3

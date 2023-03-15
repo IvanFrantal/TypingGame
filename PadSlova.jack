@@ -165,12 +165,12 @@ class PadSlova {
 			if (Keyboard.keyPressed() = 65)
 			{
 				let s = "A";
-				let nePar = checkSlovo(s, SkupSlova);
+				let nePar = PadSlova.checkSlovo(s, SkupSlova);
 				
 				if (nePar[2]) // true
 				{
 					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
-					SkupSlova[nePar[1]] = "#";
+					let SkupSlova[nePar[1]] = "#";
 				}
 				
 				let ostani = false;

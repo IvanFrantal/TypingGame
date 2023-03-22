@@ -156,11 +156,13 @@ class PadSlova {
 		var string s;  //to slovo u ASCII
 		var string ss; //slovo iz skupa slova
 		var Array nePar;
+		var int mainBr;
 		let nePar = Array.new(3);
 		let ostani = true;
+		let mainBr = 400;
 		
 		
-		while(ostani)
+		while(ostani & (mainBr > 0))
 		{
 			if (Keyboard.keyPressed() = 65)
 			{
@@ -175,6 +177,7 @@ class PadSlova {
 				
 				let ostani = false;
 			}
+			let mainBr = mainBr - 1;
 	
 			//let ostani = true;
 

@@ -100,9 +100,7 @@ class Main
 	
 			//------------------
 			
-			do PadSlova.pressKey(skupSlova, SlovaRazmaci);
-			do Sys.wait(500);
-			do Output.printString("e izaslo je van");
+			//do Output.printString("e izaslo je van");
 			
 			
 			
@@ -110,9 +108,11 @@ class Main
 			//------------------
 			
 		
-		
+			
 			do PadSlova.fallingLetters(SlovaRazmaci, br);
-			//do Sys.wait(500);			
+			do Sys.wait(500);
+			do PadSlova.pressKey(skupSlova, SlovaRazmaci);
+			
 			
 			//do PadSlova.zamjeniSprazninom(SlovaRazmaci, 2);
 			

@@ -159,7 +159,7 @@ class PadSlova {
 		var int mainBr;
 		let nePar = Array.new(3);
 		let ostani = true;
-		let mainBr = 400;
+		let mainBr = 200;
 		
 		
 		while(ostani & (mainBr > 0))
@@ -177,10 +177,361 @@ class PadSlova {
 				
 				let ostani = false;
 			}
+			
+			if (Keyboard.keyPressed() = 66)
+			{
+				let s = "B";
+				let nePar = PadSlova.checkSlovo(s, SkupSlova);
+				
+				if (nePar[2]) // true
+				{
+					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+					let SkupSlova[nePar[1]] = "#";
+				}
+				
+				let ostani = false;
+			}
+			
+			if (Keyboard.keyPressed() = 67)
+			{
+				let s = "C";
+				let nePar = PadSlova.checkSlovo(s, SkupSlova);
+				
+				if (nePar[2]) // true
+				{
+					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+					let SkupSlova[nePar[1]] = "#";
+				}
+				
+				let ostani = false;
+			}
+			
+			if (Keyboard.keyPressed() = 68)
+			{
+				let s = "D";
+				let nePar = PadSlova.checkSlovo(s, SkupSlova);
+				
+				if (nePar[2]) // true
+				{
+					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+					let SkupSlova[nePar[1]] = "#";
+				}
+				
+				let ostani = false;
+			}
+			
+			if (Keyboard.keyPressed() = 69)
+			{
+				let s = "E";
+				let nePar = PadSlova.checkSlovo(s, SkupSlova);
+				
+				if (nePar[2]) // true
+				{
+					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+					let SkupSlova[nePar[1]] = "#";
+				}
+				
+				let ostani = false;
+			}
+			
+			if (Keyboard.keyPressed() = 70)
+			{
+				let s = "F";
+				let nePar = PadSlova.checkSlovo(s, SkupSlova);
+				
+				if (nePar[2]) // true
+				{
+					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+					let SkupSlova[nePar[1]] = "#";
+				}
+				
+				let ostani = false;
+			}
+			
+			if (Keyboard.keyPressed() = 71)
+			{
+				let s = "G";
+				let nePar = PadSlova.checkSlovo(s, SkupSlova);
+				
+				if (nePar[2]) // true
+				{
+					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+					let SkupSlova[nePar[1]] = "#";
+				}
+				
+				let ostani = false;
+			}
+			
+			if (Keyboard.keyPressed() = 72)
+			{
+				let s = "H";
+				let nePar = PadSlova.checkSlovo(s, SkupSlova);
+				
+				if (nePar[2]) // true
+				{
+					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+					let SkupSlova[nePar[1]] = "#";
+				}
+				
+				let ostani = false;
+			}
+			
+			if (Keyboard.keyPressed() = 73)
+			{
+				let s = "I";
+				let nePar = PadSlova.checkSlovo(s, SkupSlova);
+				
+				if (nePar[2]) // true
+				{
+					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+					let SkupSlova[nePar[1]] = "#";
+				}
+				
+				let ostani = false;
+			}
+			
+			if (Keyboard.keyPressed() = 74)
+			{
+				let s = "J";
+				let nePar = PadSlova.checkSlovo(s, SkupSlova);
+				
+				if (nePar[2]) // true
+				{
+					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+					let SkupSlova[nePar[1]] = "#";
+				}
+				
+				let ostani = false;
+			}
+			
+			if (Keyboard.keyPressed() = 75)
+			{
+				let s = "K";
+				let nePar = PadSlova.checkSlovo(s, SkupSlova);
+				
+				if (nePar[2]) // true
+				{
+					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+					let SkupSlova[nePar[1]] = "#";
+				}
+				
+				let ostani = false;
+			}
+			
+			if (Keyboard.keyPressed() = 76)
+			{
+				let s = "L";
+				let nePar = PadSlova.checkSlovo(s, SkupSlova);
+				
+				if (nePar[2]) // true
+				{
+					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+					let SkupSlova[nePar[1]] = "#";
+				}
+				
+				let ostani = false;
+			}
+			
+			if (Keyboard.keyPressed() = 77)
+			{
+				let s = "M";
+				let nePar = PadSlova.checkSlovo(s, SkupSlova);
+				
+				if (nePar[2]) // true
+				{
+					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+					let SkupSlova[nePar[1]] = "#";
+				}
+				
+				let ostani = false;
+			}
+			
+			if (Keyboard.keyPressed() = 78)
+			{
+				let s = "N";
+				let nePar = PadSlova.checkSlovo(s, SkupSlova);
+				
+				if (nePar[2]) // true
+				{
+					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+					let SkupSlova[nePar[1]] = "#";
+				}
+				
+				let ostani = false;
+			}
+			
+			if (Keyboard.keyPressed() = 79)
+			{
+				let s = "O";
+				let nePar = PadSlova.checkSlovo(s, SkupSlova);
+				
+				if (nePar[2]) // true
+				{
+					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+					let SkupSlova[nePar[1]] = "#";
+				}
+				
+				let ostani = false;
+			}
+			
+			if (Keyboard.keyPressed() = 80)
+			{
+				let s = "P";
+				let nePar = PadSlova.checkSlovo(s, SkupSlova);
+				
+				if (nePar[2]) // true
+				{
+					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+					let SkupSlova[nePar[1]] = "#";
+				}
+				
+				let ostani = false;
+			}
+			
+			if (Keyboard.keyPressed() = 81)
+			{
+				let s = "Q";
+				let nePar = PadSlova.checkSlovo(s, SkupSlova);
+				
+				if (nePar[2]) // true
+				{
+					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+					let SkupSlova[nePar[1]] = "#";
+				}
+				
+				let ostani = false;
+			}
+			
+			if (Keyboard.keyPressed() = 82)
+			{
+				let s = "R";
+				let nePar = PadSlova.checkSlovo(s, SkupSlova);
+				
+				if (nePar[2]) // true
+				{
+					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+					let SkupSlova[nePar[1]] = "#";
+				}
+				
+				let ostani = false;
+			}
+			
+			if (Keyboard.keyPressed() = 83)
+			{
+				let s = "S";
+				let nePar = PadSlova.checkSlovo(s, SkupSlova);
+				
+				if (nePar[2]) // true
+				{
+					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+					let SkupSlova[nePar[1]] = "#";
+				}
+				
+				let ostani = false;
+			}
+			
+			if (Keyboard.keyPressed() = 84)
+			{
+				let s = "T";
+				let nePar = PadSlova.checkSlovo(s, SkupSlova);
+				
+				if (nePar[2]) // true
+				{
+					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+					let SkupSlova[nePar[1]] = "#";
+				}
+				
+				let ostani = false;
+			}
+			
+			if (Keyboard.keyPressed() = 85)
+			{
+				let s = "U";
+				let nePar = PadSlova.checkSlovo(s, SkupSlova);
+				
+				if (nePar[2]) // true
+				{
+					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+					let SkupSlova[nePar[1]] = "#";
+				}
+				
+				let ostani = false;
+			}
+			
+			if (Keyboard.keyPressed() = 86)
+			{
+				let s = "V";
+				let nePar = PadSlova.checkSlovo(s, SkupSlova);
+				
+				if (nePar[2]) // true
+				{
+					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+					let SkupSlova[nePar[1]] = "#";
+				}
+				
+				let ostani = false;
+			}
+			
+			if (Keyboard.keyPressed() = 87)
+			{
+				let s = "W";
+				let nePar = PadSlova.checkSlovo(s, SkupSlova);
+				
+				if (nePar[2]) // true
+				{
+					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+					let SkupSlova[nePar[1]] = "#";
+				}
+				
+				let ostani = false;
+			}
+			
+			if (Keyboard.keyPressed() = 88)
+			{
+				let s = "X";
+				let nePar = PadSlova.checkSlovo(s, SkupSlova);
+				
+				if (nePar[2]) // true
+				{
+					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+					let SkupSlova[nePar[1]] = "#";
+				}
+				
+				let ostani = false;
+			}
+			
+			if (Keyboard.keyPressed() = 89)
+			{
+				let s = "Y";
+				let nePar = PadSlova.checkSlovo(s, SkupSlova);
+				
+				if (nePar[2]) // true
+				{
+					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+					let SkupSlova[nePar[1]] = "#";
+				}
+				
+				let ostani = false;
+			}
+			
+			if (Keyboard.keyPressed() = 90)
+			{
+				let s = "Z";
+				let nePar = PadSlova.checkSlovo(s, SkupSlova);
+				
+				if (nePar[2]) // true
+				{
+					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+					let SkupSlova[nePar[1]] = "#";
+				}
+				
+				let ostani = false;
+			}
+			
+			
+			
 			let mainBr = mainBr - 1;
-	
 			//let ostani = true;
-
 		}
 		
 		do nePar.dispose();

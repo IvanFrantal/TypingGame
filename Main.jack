@@ -110,7 +110,7 @@ class Main
 		
 			
 			do PadSlova.fallingLetters(SlovaRazmaci, br);
-			do Sys.wait(500);
+			do Sys.wait(300);
 			do PadSlova.pressKey(skupSlova, SlovaRazmaci);
 			
 			

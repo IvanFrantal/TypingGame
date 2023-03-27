@@ -69,14 +69,17 @@ class PadSlova {
 
 		do Output.moveCursor(x, 0);
 		do PadSlova.printList(SlovaRazmaci);
-		do Sys.wait(500);
+		do Sys.wait(700);
 		do Output.moveCursor(x, 0);
 		do Output.printString(praznina);
 		
-		do Sys.wait(1000);
+		do Sys.wait(500);
 		
 		return;
 	}
+	
+	// BILJESKA: treba ti sistem da mozes stiskati vise slova po ispisu liste jer tebi to sada prihvaca jedno slovo pa jednoj
+	//				iteraciji ispisa liste
 	
 	function string drawLetters()
 	{
@@ -149,6 +152,34 @@ class PadSlova {
 		return nePar;
 	}
 	
+	// napravi ovu funkciju ali tako da radi sa skupom slova i da na njemu gleda po indeksima polja stringove
+	// mislim da je ovo tu preskupo pa da zato ne radi kako treba
+	function bool isEmpty (Array SkupSlova)
+	{
+		var int br, prazno;
+		var string s;
+		let s = "#";
+		let br = 0;
+		let prazno = 0;
+		
+		while (br < 16)
+		{
+			if (Strings.equals(SkupSlova[br], s))
+			{
+				let prazno = prazno + 1;
+			}
+			
+			let br = br + 1;
+		}
+		
+		if (prazno = 16)
+		{
+			return true;
+		}
+		
+		return false;
+	}
+	
 	
 	function void pressKey(Array SkupSlova, Array SlovaRazmaci)
 	{
@@ -159,379 +190,383 @@ class PadSlova {
 		var int mainBr;
 		let nePar = Array.new(3);
 		let ostani = true;
-		let mainBr = 200;
+		let mainBr = 300;
 		
 		
-		while(ostani & (mainBr > 0))
-		{
-			if (Keyboard.keyPressed() = 65)
+		
+		if (~(Keyboard.keyPressed() = 0)){
+			
+			while(ostani  & (mainBr > 0))
 			{
-				let s = "A";
-				let nePar = PadSlova.checkSlovo(s, SkupSlova);
-				
-				if (nePar[2]) // true
+				if (Keyboard.keyPressed() = 65)
 				{
-					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
-					let SkupSlova[nePar[1]] = "#";
+					let s = "A";
+					let nePar = PadSlova.checkSlovo(s, SkupSlova);
+					
+					if (nePar[2]) // true
+					{
+						do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+						let SkupSlova[nePar[1]] = "#";
+					}
+					
+					let ostani = false;
 				}
 				
-				let ostani = false;
-			}
-			
-			if (Keyboard.keyPressed() = 66)
-			{
-				let s = "B";
-				let nePar = PadSlova.checkSlovo(s, SkupSlova);
-				
-				if (nePar[2]) // true
+				if (Keyboard.keyPressed() = 66)
 				{
-					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
-					let SkupSlova[nePar[1]] = "#";
+					let s = "B";
+					let nePar = PadSlova.checkSlovo(s, SkupSlova);
+					
+					if (nePar[2]) // true
+					{
+						do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+						let SkupSlova[nePar[1]] = "#";
+					}
+					
+					let ostani = false;
 				}
 				
-				let ostani = false;
-			}
-			
-			if (Keyboard.keyPressed() = 67)
-			{
-				let s = "C";
-				let nePar = PadSlova.checkSlovo(s, SkupSlova);
-				
-				if (nePar[2]) // true
+				if (Keyboard.keyPressed() = 67)
 				{
-					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
-					let SkupSlova[nePar[1]] = "#";
+					let s = "C";
+					let nePar = PadSlova.checkSlovo(s, SkupSlova);
+					
+					if (nePar[2]) // true
+					{
+						do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+						let SkupSlova[nePar[1]] = "#";
+					}
+					
+					let ostani = false;
 				}
 				
-				let ostani = false;
-			}
-			
-			if (Keyboard.keyPressed() = 68)
-			{
-				let s = "D";
-				let nePar = PadSlova.checkSlovo(s, SkupSlova);
-				
-				if (nePar[2]) // true
+				if (Keyboard.keyPressed() = 68)
 				{
-					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
-					let SkupSlova[nePar[1]] = "#";
+					let s = "D";
+					let nePar = PadSlova.checkSlovo(s, SkupSlova);
+					
+					if (nePar[2]) // true
+					{
+						do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+						let SkupSlova[nePar[1]] = "#";
+					}
+					
+					let ostani = false;
 				}
 				
-				let ostani = false;
-			}
-			
-			if (Keyboard.keyPressed() = 69)
-			{
-				let s = "E";
-				let nePar = PadSlova.checkSlovo(s, SkupSlova);
-				
-				if (nePar[2]) // true
+				if (Keyboard.keyPressed() = 69)
 				{
-					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
-					let SkupSlova[nePar[1]] = "#";
+					let s = "E";
+					let nePar = PadSlova.checkSlovo(s, SkupSlova);
+					
+					if (nePar[2]) // true
+					{
+						do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+						let SkupSlova[nePar[1]] = "#";
+					}
+					
+					let ostani = false;
 				}
 				
-				let ostani = false;
-			}
-			
-			if (Keyboard.keyPressed() = 70)
-			{
-				let s = "F";
-				let nePar = PadSlova.checkSlovo(s, SkupSlova);
-				
-				if (nePar[2]) // true
+				if (Keyboard.keyPressed() = 70)
 				{
-					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
-					let SkupSlova[nePar[1]] = "#";
+					let s = "F";
+					let nePar = PadSlova.checkSlovo(s, SkupSlova);
+					
+					if (nePar[2]) // true
+					{
+						do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+						let SkupSlova[nePar[1]] = "#";
+					}
+					
+					let ostani = false;
 				}
 				
-				let ostani = false;
-			}
-			
-			if (Keyboard.keyPressed() = 71)
-			{
-				let s = "G";
-				let nePar = PadSlova.checkSlovo(s, SkupSlova);
-				
-				if (nePar[2]) // true
+				if (Keyboard.keyPressed() = 71)
 				{
-					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
-					let SkupSlova[nePar[1]] = "#";
+					let s = "G";
+					let nePar = PadSlova.checkSlovo(s, SkupSlova);
+					
+					if (nePar[2]) // true
+					{
+						do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+						let SkupSlova[nePar[1]] = "#";
+					}
+					
+					let ostani = false;
 				}
 				
-				let ostani = false;
-			}
-			
-			if (Keyboard.keyPressed() = 72)
-			{
-				let s = "H";
-				let nePar = PadSlova.checkSlovo(s, SkupSlova);
-				
-				if (nePar[2]) // true
+				if (Keyboard.keyPressed() = 72)
 				{
-					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
-					let SkupSlova[nePar[1]] = "#";
+					let s = "H";
+					let nePar = PadSlova.checkSlovo(s, SkupSlova);
+					
+					if (nePar[2]) // true
+					{
+						do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+						let SkupSlova[nePar[1]] = "#";
+					}
+					
+					let ostani = false;
 				}
 				
-				let ostani = false;
-			}
-			
-			if (Keyboard.keyPressed() = 73)
-			{
-				let s = "I";
-				let nePar = PadSlova.checkSlovo(s, SkupSlova);
-				
-				if (nePar[2]) // true
+				if (Keyboard.keyPressed() = 73)
 				{
-					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
-					let SkupSlova[nePar[1]] = "#";
+					let s = "I";
+					let nePar = PadSlova.checkSlovo(s, SkupSlova);
+					
+					if (nePar[2]) // true
+					{
+						do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+						let SkupSlova[nePar[1]] = "#";
+					}
+					
+					let ostani = false;
 				}
 				
-				let ostani = false;
-			}
-			
-			if (Keyboard.keyPressed() = 74)
-			{
-				let s = "J";
-				let nePar = PadSlova.checkSlovo(s, SkupSlova);
-				
-				if (nePar[2]) // true
+				if (Keyboard.keyPressed() = 74)
 				{
-					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
-					let SkupSlova[nePar[1]] = "#";
+					let s = "J";
+					let nePar = PadSlova.checkSlovo(s, SkupSlova);
+					
+					if (nePar[2]) // true
+					{
+						do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+						let SkupSlova[nePar[1]] = "#";
+					}
+					
+					let ostani = false;
 				}
 				
-				let ostani = false;
-			}
-			
-			if (Keyboard.keyPressed() = 75)
-			{
-				let s = "K";
-				let nePar = PadSlova.checkSlovo(s, SkupSlova);
-				
-				if (nePar[2]) // true
+				if (Keyboard.keyPressed() = 75)
 				{
-					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
-					let SkupSlova[nePar[1]] = "#";
+					let s = "K";
+					let nePar = PadSlova.checkSlovo(s, SkupSlova);
+					
+					if (nePar[2]) // true
+					{
+						do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+						let SkupSlova[nePar[1]] = "#";
+					}
+					
+					let ostani = false;
 				}
 				
-				let ostani = false;
-			}
-			
-			if (Keyboard.keyPressed() = 76)
-			{
-				let s = "L";
-				let nePar = PadSlova.checkSlovo(s, SkupSlova);
-				
-				if (nePar[2]) // true
+				if (Keyboard.keyPressed() = 76)
 				{
-					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
-					let SkupSlova[nePar[1]] = "#";
+					let s = "L";
+					let nePar = PadSlova.checkSlovo(s, SkupSlova);
+					
+					if (nePar[2]) // true
+					{
+						do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+						let SkupSlova[nePar[1]] = "#";
+					}
+					
+					let ostani = false;
 				}
 				
-				let ostani = false;
-			}
-			
-			if (Keyboard.keyPressed() = 77)
-			{
-				let s = "M";
-				let nePar = PadSlova.checkSlovo(s, SkupSlova);
-				
-				if (nePar[2]) // true
+				if (Keyboard.keyPressed() = 77)
 				{
-					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
-					let SkupSlova[nePar[1]] = "#";
+					let s = "M";
+					let nePar = PadSlova.checkSlovo(s, SkupSlova);
+					
+					if (nePar[2]) // true
+					{
+						do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+						let SkupSlova[nePar[1]] = "#";
+					}
+					
+					let ostani = false;
 				}
 				
-				let ostani = false;
-			}
-			
-			if (Keyboard.keyPressed() = 78)
-			{
-				let s = "N";
-				let nePar = PadSlova.checkSlovo(s, SkupSlova);
-				
-				if (nePar[2]) // true
+				if (Keyboard.keyPressed() = 78)
 				{
-					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
-					let SkupSlova[nePar[1]] = "#";
+					let s = "N";
+					let nePar = PadSlova.checkSlovo(s, SkupSlova);
+					
+					if (nePar[2]) // true
+					{
+						do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+						let SkupSlova[nePar[1]] = "#";
+					}
+					
+					let ostani = false;
 				}
 				
-				let ostani = false;
-			}
-			
-			if (Keyboard.keyPressed() = 79)
-			{
-				let s = "O";
-				let nePar = PadSlova.checkSlovo(s, SkupSlova);
-				
-				if (nePar[2]) // true
+				if (Keyboard.keyPressed() = 79)
 				{
-					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
-					let SkupSlova[nePar[1]] = "#";
+					let s = "O";
+					let nePar = PadSlova.checkSlovo(s, SkupSlova);
+					
+					if (nePar[2]) // true
+					{
+						do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+						let SkupSlova[nePar[1]] = "#";
+					}
+					
+					let ostani = false;
 				}
 				
-				let ostani = false;
-			}
-			
-			if (Keyboard.keyPressed() = 80)
-			{
-				let s = "P";
-				let nePar = PadSlova.checkSlovo(s, SkupSlova);
-				
-				if (nePar[2]) // true
+				if (Keyboard.keyPressed() = 80)
 				{
-					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
-					let SkupSlova[nePar[1]] = "#";
+					let s = "P";
+					let nePar = PadSlova.checkSlovo(s, SkupSlova);
+					
+					if (nePar[2]) // true
+					{
+						do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+						let SkupSlova[nePar[1]] = "#";
+					}
+					
+					let ostani = false;
 				}
 				
-				let ostani = false;
-			}
-			
-			if (Keyboard.keyPressed() = 81)
-			{
-				let s = "Q";
-				let nePar = PadSlova.checkSlovo(s, SkupSlova);
-				
-				if (nePar[2]) // true
+				if (Keyboard.keyPressed() = 81)
 				{
-					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
-					let SkupSlova[nePar[1]] = "#";
+					let s = "Q";
+					let nePar = PadSlova.checkSlovo(s, SkupSlova);
+					
+					if (nePar[2]) // true
+					{
+						do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+						let SkupSlova[nePar[1]] = "#";
+					}
+					
+					let ostani = false;
 				}
 				
-				let ostani = false;
-			}
-			
-			if (Keyboard.keyPressed() = 82)
-			{
-				let s = "R";
-				let nePar = PadSlova.checkSlovo(s, SkupSlova);
-				
-				if (nePar[2]) // true
+				if (Keyboard.keyPressed() = 82)
 				{
-					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
-					let SkupSlova[nePar[1]] = "#";
+					let s = "R";
+					let nePar = PadSlova.checkSlovo(s, SkupSlova);
+					
+					if (nePar[2]) // true
+					{
+						do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+						let SkupSlova[nePar[1]] = "#";
+					}
+					
+					let ostani = false;
 				}
 				
-				let ostani = false;
-			}
-			
-			if (Keyboard.keyPressed() = 83)
-			{
-				let s = "S";
-				let nePar = PadSlova.checkSlovo(s, SkupSlova);
-				
-				if (nePar[2]) // true
+				if (Keyboard.keyPressed() = 83)
 				{
-					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
-					let SkupSlova[nePar[1]] = "#";
+					let s = "S";
+					let nePar = PadSlova.checkSlovo(s, SkupSlova);
+					
+					if (nePar[2]) // true
+					{
+						do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+						let SkupSlova[nePar[1]] = "#";
+					}
+					
+					let ostani = false;
 				}
 				
-				let ostani = false;
-			}
-			
-			if (Keyboard.keyPressed() = 84)
-			{
-				let s = "T";
-				let nePar = PadSlova.checkSlovo(s, SkupSlova);
-				
-				if (nePar[2]) // true
+				if (Keyboard.keyPressed() = 84)
 				{
-					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
-					let SkupSlova[nePar[1]] = "#";
+					let s = "T";
+					let nePar = PadSlova.checkSlovo(s, SkupSlova);
+					
+					if (nePar[2]) // true
+					{
+						do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+						let SkupSlova[nePar[1]] = "#";
+					}
+					
+					let ostani = false;
 				}
 				
-				let ostani = false;
-			}
-			
-			if (Keyboard.keyPressed() = 85)
-			{
-				let s = "U";
-				let nePar = PadSlova.checkSlovo(s, SkupSlova);
-				
-				if (nePar[2]) // true
+				if (Keyboard.keyPressed() = 85)
 				{
-					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
-					let SkupSlova[nePar[1]] = "#";
+					let s = "U";
+					let nePar = PadSlova.checkSlovo(s, SkupSlova);
+					
+					if (nePar[2]) // true
+					{
+						do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+						let SkupSlova[nePar[1]] = "#";
+					}
+					
+					let ostani = false;
 				}
 				
-				let ostani = false;
-			}
-			
-			if (Keyboard.keyPressed() = 86)
-			{
-				let s = "V";
-				let nePar = PadSlova.checkSlovo(s, SkupSlova);
-				
-				if (nePar[2]) // true
+				if (Keyboard.keyPressed() = 86)
 				{
-					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
-					let SkupSlova[nePar[1]] = "#";
+					let s = "V";
+					let nePar = PadSlova.checkSlovo(s, SkupSlova);
+					
+					if (nePar[2]) // true
+					{
+						do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+						let SkupSlova[nePar[1]] = "#";
+					}
+					
+					let ostani = false;
 				}
 				
-				let ostani = false;
-			}
-			
-			if (Keyboard.keyPressed() = 87)
-			{
-				let s = "W";
-				let nePar = PadSlova.checkSlovo(s, SkupSlova);
-				
-				if (nePar[2]) // true
+				if (Keyboard.keyPressed() = 87)
 				{
-					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
-					let SkupSlova[nePar[1]] = "#";
+					let s = "W";
+					let nePar = PadSlova.checkSlovo(s, SkupSlova);
+					
+					if (nePar[2]) // true
+					{
+						do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+						let SkupSlova[nePar[1]] = "#";
+					}
+					
+					let ostani = false;
 				}
 				
-				let ostani = false;
-			}
-			
-			if (Keyboard.keyPressed() = 88)
-			{
-				let s = "X";
-				let nePar = PadSlova.checkSlovo(s, SkupSlova);
-				
-				if (nePar[2]) // true
+				if (Keyboard.keyPressed() = 88)
 				{
-					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
-					let SkupSlova[nePar[1]] = "#";
+					let s = "X";
+					let nePar = PadSlova.checkSlovo(s, SkupSlova);
+					
+					if (nePar[2]) // true
+					{
+						do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+						let SkupSlova[nePar[1]] = "#";
+					}
+					
+					let ostani = false;
 				}
 				
-				let ostani = false;
-			}
-			
-			if (Keyboard.keyPressed() = 89)
-			{
-				let s = "Y";
-				let nePar = PadSlova.checkSlovo(s, SkupSlova);
-				
-				if (nePar[2]) // true
+				if (Keyboard.keyPressed() = 89)
 				{
-					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
-					let SkupSlova[nePar[1]] = "#";
+					let s = "Y";
+					let nePar = PadSlova.checkSlovo(s, SkupSlova);
+					
+					if (nePar[2]) // true
+					{
+						do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+						let SkupSlova[nePar[1]] = "#";
+					}
+					
+					let ostani = false;
+				}
+		
+				if (Keyboard.keyPressed() = 90)
+				{
+					let s = "Z";
+					let nePar = PadSlova.checkSlovo(s, SkupSlova);
+					
+					if (nePar[2]) // true
+					{
+						do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
+						let SkupSlova[nePar[1]] = "#";
+					}
+					
+					let ostani = false;
 				}
 				
-				let ostani = false;
-			}
-			
-			if (Keyboard.keyPressed() = 90)
-			{
-				let s = "Z";
-				let nePar = PadSlova.checkSlovo(s, SkupSlova);
 				
-				if (nePar[2]) // true
-				{
-					do PadSlova.zamjeniSprazninom(SlovaRazmaci, nePar[1]);
-					let SkupSlova[nePar[1]] = "#";
-				}
-				
-				let ostani = false;
-			}
+				let mainBr = mainBr - 1;
+				//let ostani = true;
+			}			
 			
-			
-			
-			let mainBr = mainBr - 1;
-			//let ostani = true;
 		}
 		
 		do nePar.dispose();

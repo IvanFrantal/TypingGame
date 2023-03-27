@@ -5,7 +5,7 @@ class Main
 	function void main()
 	{
 		var Array pogoden, skupSlova, randBrlist, SlovaRazmaci;
-		var int difficulty, score, br, randBroj, seed, gameTime;
+		var int difficulty, score, br, randBroj, seed, gameTime, brojKoraka, timer;
 		var string slovo;
 		
 		let SlovaRazmaci = Array.new(16);
@@ -93,6 +93,8 @@ class Main
 		
 		
 		let br = 0;
+		let brojKoraka = 0;
+		let timer = 3000;
 		while (br < gameTime)
 		{	
 			let br = br + 3;
@@ -107,18 +109,114 @@ class Main
 			
 			//------------------
 			
-		
+			// Luka pseudo
+			/*
+			let pritisnutaTipka = Keyboard.keyPressed();
+			if (~(pritisnutaTipka = 0)){
+			
+				// u ifu ispod ti je f-ja koja vraca bool
+				// ona treba raditi to da izbaci samo jedno slovo jer se moze desiti da procitas jedno slovo vise puta
+				// i mora provjeriti je li u skupu slova pa obrisati
+				// takoder ako je cijeli skup slova prazan onda generiraj novi skup
+				
+				if (izbaci 1x pritisnutaTipka iz skupSlova, vrati je li skupSlova)
+				{
+					stvori novi skup slova
+				}
+			}
+			brojKoraka++;
+			if (brojKoraka == 10)  //ovaj 10 mozes svaki put kada se stvori novi skup slova smanjis primjer za 1 da bi igra
+								   //  isla sve brze i brze
+			{
+				pad slova
+				brojKoraka = 0
+				wait?
+			}
+			*/
+			// ===========
 			
 			do PadSlova.fallingLetters(SlovaRazmaci, br);
-			do Sys.wait(300);
-			do PadSlova.pressKey(skupSlova, SlovaRazmaci);
 			
+			while (brojKoraka < timer) 
+			{
+				let br = br + 3;
+				
+				
+
+				do PadSlova.pressKey(skupSlova, SlovaRazmaci);
+				
+				if (~(Keyboard.keyPressed() = 0)){
+				
+					if (PadSlova.isEmpty(skupSlova))
+					{
+						//=====================================
+								// popuni mi listu sa random slovima
+						let br = 0;
+						while (br < 16)
+						{
+							do Random.setSeed(seed);
+							let slovo = PadSlova.drawLetters();
+							
+							let randBrlist[br] = slovo;
+							
+							let br = br + 1;
+							
+							if (seed > 32700)
+							{
+								let seed = 5;
+							}
+							
+							let seed = seed + 17;
+						}
+						
+						//popuni main listu sa slovima
+						let br = 0;
+						while (br < 16)
+						{
+							do PadSlova.popuniSslovima(br, randBrlist[br], skupSlova);
+						
+							let br = br + 1;
+						}
+						
+						do PadSlova.dodajRazmake(SlovaRazmaci, skupSlova);
+									
+									
+									
+									
+						//=====================================
+					
+						let timer = timer - 1000; // ovo 1000 smanji na 10 npr da se igra moze malo duze igrati
+						let br = 5;
+						do PadSlova.fallingLetters(SlovaRazmaci, br);
+					}
+				
+				}
+				
+				
+				let brojKoraka = brojKoraka + 1;
+				
+				
+				
+				let br = br - 3;
+			}
+		
+		
+		
+			if (brojKoraka > (timer - 1))
+			{
+				let brojKoraka = 0;
+			}
 			
-			//do PadSlova.zamjeniSprazninom(SlovaRazmaci, 2);
-			
+		
 			let br = br - 3;
 			let br = br + 1; 
+		
+			
+			//do PadSlova.zamjeniSprazninom(SlovaRazmaci, 2);
+		
+			
 		}
+
 		
 		
 		

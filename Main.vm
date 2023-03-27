@@ -1,4 +1,4 @@
-function Main.main 11
+function Main.main 13
 push constant 16
 call Array.new 1
 pop local 3
@@ -459,11 +459,11 @@ push local 8
 call Random.setSeed 1
 pop temp 0
 call PadSlova.drawLetters 0
-pop local 10
+pop local 12
 push local 6
 push local 2
 add
-push local 10
+push local 12
 pop temp 0
 pop pointer 1
 push temp 0
@@ -516,6 +516,10 @@ call PadSlova.dodajRazmake 2
 pop temp 0
 push constant 0
 pop local 6
+push constant 0
+pop local 10
+push constant 3000
+pop local 11
 label WHILE_EXP3
 push local 6
 push local 9
@@ -530,13 +534,132 @@ push local 3
 push local 6
 call PadSlova.fallingLetters 2
 pop temp 0
-push constant 300
-call Sys.wait 1
-pop temp 0
+label WHILE_EXP4
+push local 10
+push local 11
+lt
+not
+if-goto WHILE_END4
+push local 6
+push constant 3
+add
+pop local 6
 push local 1
 push local 3
 call PadSlova.pressKey 2
 pop temp 0
+call Keyboard.keyPressed 0
+push constant 0
+eq
+not
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push local 1
+call PadSlova.isEmpty 1
+if-goto IF_TRUE4
+goto IF_FALSE4
+label IF_TRUE4
+push constant 0
+pop local 6
+label WHILE_EXP5
+push local 6
+push constant 16
+lt
+not
+if-goto WHILE_END5
+push local 8
+call Random.setSeed 1
+pop temp 0
+call PadSlova.drawLetters 0
+pop local 12
+push local 6
+push local 2
+add
+push local 12
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 6
+push constant 1
+add
+pop local 6
+push local 8
+push constant 32700
+gt
+if-goto IF_TRUE5
+goto IF_FALSE5
+label IF_TRUE5
+push constant 5
+pop local 8
+label IF_FALSE5
+push local 8
+push constant 17
+add
+pop local 8
+goto WHILE_EXP5
+label WHILE_END5
+push constant 0
+pop local 6
+label WHILE_EXP6
+push local 6
+push constant 16
+lt
+not
+if-goto WHILE_END6
+push local 6
+push local 6
+push local 2
+add
+pop pointer 1
+push that 0
+push local 1
+call PadSlova.popuniSslovima 3
+pop temp 0
+push local 6
+push constant 1
+add
+pop local 6
+goto WHILE_EXP6
+label WHILE_END6
+push local 3
+push local 1
+call PadSlova.dodajRazmake 2
+pop temp 0
+push local 11
+push constant 1000
+sub
+pop local 11
+push constant 5
+pop local 6
+push local 3
+push local 6
+call PadSlova.fallingLetters 2
+pop temp 0
+label IF_FALSE4
+label IF_FALSE3
+push local 10
+push constant 1
+add
+pop local 10
+push local 6
+push constant 3
+sub
+pop local 6
+goto WHILE_EXP4
+label WHILE_END4
+push local 10
+push local 11
+push constant 1
+sub
+gt
+if-goto IF_TRUE6
+goto IF_FALSE6
+label IF_TRUE6
+push constant 0
+pop local 10
+label IF_FALSE6
 push local 6
 push constant 3
 sub
